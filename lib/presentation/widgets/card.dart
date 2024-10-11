@@ -19,9 +19,9 @@ class CardCustom extends StatelessWidget {
           ),
         ],
       ),
-      child: const Column(
+      child:  Column(
         children: <Widget>[
-          Padding(
+          const Padding(
             padding:  EdgeInsets.all(8.0),
             child: Text(
               'Hola "Name"',
@@ -31,7 +31,7 @@ class CardCustom extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
+          const Padding(
             padding:  EdgeInsets.all(8.0),
             child: Text(
               'Tu saldo actual es de: \$0.00',
@@ -40,6 +40,8 @@ class CardCustom extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: (size.height * .01)+30,),
+          const Text("123 456 789 ")
         ], 
       )
     );
