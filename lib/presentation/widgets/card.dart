@@ -13,18 +13,16 @@ class CardCustom extends StatelessWidget {
         children: [
           Positioned.fill(
             child: SvgPicture.asset(
-              'assets/Card 1 (1).svg', // Asegúrate de que la ruta sea correcta
-              fit: BoxFit.cover, // Ajustar el SVG para cubrir todo el espacio
+              'assets/Card 1 (2).svg', // Asegúrate de que la ruta sea correcta
             ),
           ),
           // Contenedor con contenido de la tarjeta
           Container(
-            width: size.width * 0.9,
+            width: (size.width * 0.9),
             height: (size.height * 0.25),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              // Elimina el color de fondo para que el SVG se muestre correctamente
               color: Colors.transparent, // Cambiado a transparente
               boxShadow: [
                 BoxShadow(
