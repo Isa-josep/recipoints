@@ -13,16 +13,17 @@ class CardCustom extends StatelessWidget {
         children: [
           Positioned.fill(
             child: SvgPicture.asset(
-              'assets/Card 1 (2).svg', // Asegúrate de que la ruta sea correcta
+              'assets/svgviewer-output.svg',
             ),
           ),
           // Contenedor con contenido de la tarjeta
           Container(
-            width: (size.width * 0.9),
+            width: size.width * 0.9,
             height: (size.height * 0.25),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
+              // Elimina el color de fondo para que el SVG se muestre correctamente
               color: Colors.transparent, // Cambiado a transparente
               boxShadow: [
                 BoxShadow(
@@ -111,33 +112,6 @@ class CardCustom extends StatelessWidget {
           ),
         ],
       ),
-
-      child:  Column(
-        children: <Widget>[
-          const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child: Text(
-              'Hola "Name"',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child: Text(
-              'Tu saldo actual es de: \$0.00',
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-          ),
-          SizedBox(height: (size.height * .01)+30,),
-          const Text("123 456 789 ")
-        ], 
-      )
-
     );
   }
 }
