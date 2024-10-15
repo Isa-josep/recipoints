@@ -111,8 +111,7 @@ class CardCustom extends StatelessWidget {
           ),
         ],
       ),
-<<<<<<< HEAD
-=======
+
       child:  Column(
         children: <Widget>[
           const Padding(
@@ -138,7 +137,7 @@ class CardCustom extends StatelessWidget {
           const Text("123 456 789 ")
         ], 
       )
->>>>>>> 7aaf81cab486776c0c57211d88d1c42d8a521839
+
     );
   }
 }
