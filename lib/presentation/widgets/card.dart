@@ -111,34 +111,6 @@ class CardCustom extends StatelessWidget {
           ),
         ],
       ),
-<<<<<<< HEAD
-=======
-      child:  Column(
-        children: <Widget>[
-          const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child: Text(
-              'Hola "Name"',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child: Text(
-              'Tu saldo actual es de: \$0.00',
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-          ),
-          SizedBox(height: (size.height * .01)+30,),
-          const Text("123 456 789 ")
-        ], 
-      )
->>>>>>> 7aaf81cab486776c0c57211d88d1c42d8a521839
     );
   }
 }

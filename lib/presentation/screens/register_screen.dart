@@ -2,18 +2,16 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:recipoints/presentation/screens/home_screen.dart';
-import 'package:recipoints/presentation/screens/register_screen.dart';
+import 'package:recipoints/presentation/screens/login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
-
- 
+  _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegistrationScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   String _email = '';
   String _password = '';
@@ -25,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }//Aca esta la funcion que se encarga de validar el formulario
 
-   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  'Welcome back',
+                  'Register',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -53,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Please sign in to your account',
+                  'Ingresa los datos',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black54,
@@ -64,6 +61,38 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formKey,
                   child: Column(
                     children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'Nombre',
+                          filled: true,
+                          fillColor: Colors.grey[100],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                        keyboardType: TextInputType.emailAddress,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          return null;
+                        },
+                        onChanged: (value) => _email = value,
+                      ),
+                      const SizedBox(height: 16),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'Apellido',
+                          filled: true,
+                          fillColor: Colors.grey[100],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
                       TextFormField(
                         decoration: InputDecoration(
                           hintText: 'Email address',
@@ -103,6 +132,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         onChanged: (value) => _password = value,
                       ),
+                      const SizedBox(height: 16),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'Confirmar Password',
+                          filled: true,
+                          fillColor: Colors.grey[100],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
                       const SizedBox(height: 24),
                       ElevatedButton(
                         onPressed: () => Get.to(const HomeScreen()),
@@ -113,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        child: const Text('Sign in'),
+                        child: const Text('Registrarse'),
                       ),
                     ],
                   ),
@@ -121,17 +162,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
                 RichText(
                   text: TextSpan(
-                    text: 'Don\'t have an account? ',
+                    text: 'I have an account? ',
                     style: const TextStyle(color: Colors.black54),
                     children: [
                       TextSpan(
-                        text: 'Register here',
+                        text: 'Login',
                         style: const TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => Get.to(RegisterScreen())
+                          ..onTap = () => Get.back(),
                       ),
                     ],
                   ),
